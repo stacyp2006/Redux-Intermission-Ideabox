@@ -4,6 +4,11 @@ import { connect } from 'react-redux';
 
 class AddTodoForm extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { todo: '' };
+  }
+
   submitForm = (e) => {
     e.preventDefault()
     this.props.addToDo(this.state.todo)
@@ -24,9 +29,9 @@ class AddTodoForm extends Component {
     )
   }
 
-  const mapDispatchToProps = dispatch => ({
-    addToDo: text => dispatch( addToDo(text) )
-  })
 }
 
+const mapDispatchToProps = dispatch => ({
+  addToDo: text => dispatch( addToDo(text) )
+})
 export default connect(null, mapDispatchToProps)(AddTodoForm);
