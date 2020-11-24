@@ -2,9 +2,14 @@ import React from 'react';
 import { completeTodo } from '../actions';
 import { connect } from 'react-redux';
 
-const ToDo = ({ id, todo, completed }) => {
+const ToDo = ({ id, todo, completed, completeTodo }) => {
   return (
-    <li>{todo}</li>
+    <li
+      className={completed ? 'completed' : 'not-completed'}
+      onClick={() => completeTodo(id)}
+    >
+    {todo}
+    </li>
   )
 }
 
