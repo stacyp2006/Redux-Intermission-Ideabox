@@ -8,4 +8,8 @@ const ToDo = ({ id, todo, completed }) => {
   )
 }
 
+const mapDispatchToProps = dispatch => ({
+  completeTodo : id => dispatch( completeTodo(id))
+})
+
 export default connect(null, mapDispatchToProps)(ToDo);
