@@ -1,4 +1,6 @@
 import React from 'react';
+import { completeTodo } from '../actions';
+import { connect } from 'react-redux';
 
 const ToDo = ({ id, todo, completed }) => {
   return (
@@ -6,4 +8,4 @@ const ToDo = ({ id, todo, completed }) => {
   )
 }
 
-export default ToDo;
+export default connect(null, mapDispatchToProps)(ToDo);
